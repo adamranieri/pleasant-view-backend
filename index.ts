@@ -4,9 +4,11 @@ import { BookDaoLocal } from './daos/book-dao-impl-local';
 import { Book } from './entities';
 import { BookService } from './services/book-service';
 import { BookServiceImpl } from './services/book-service-impl';
+import cors from 'cors'
 
 const app = express();
 app.use(express.json());
+app.use(cors())
 
 const bookDao: BookDao = new BookDaoLocal();
 const bookService: BookService = new BookServiceImpl(bookDao);// Dependency Injection
