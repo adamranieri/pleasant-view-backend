@@ -12,6 +12,9 @@ export class BookServiceImpl implements BookService{
     constructor(bookDao:BookDao){
         this.bookDao = bookDao;
     }
+    retrieveBookById(id: string): Promise<Book> {
+        return this.bookDao.getBookById(id);
+    }
 
     retrieveAllBooks(): Promise<Book[]> {
         return this.bookDao.getAllBooks();

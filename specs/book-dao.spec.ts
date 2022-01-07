@@ -10,8 +10,13 @@ describe("Book DAO Tests", ()=>{
     it("Should Create a book", async () =>{
         const returnedBook: Book = await bookDao.createBook(testBook);
         expect(returnedBook.id).toBeTruthy()
+        testBook = returnedBook;
     })
 
+    it("Should get a book by ID", async ()=>{
+        const book:Book = await bookDao.getBookById(testBook.id);
+        expect(book.id).toBe(testBook.id);
+    })
 
     it("Should get all Books", async ()=>{
         const book1: Book = {id:'', title:"Enders Game", author:"Orson Scott Clark", returnDate:0, isCheckedout: false}

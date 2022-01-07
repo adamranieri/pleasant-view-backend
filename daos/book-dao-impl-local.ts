@@ -6,6 +6,13 @@ import {v4} from 'uuid';
 
 export class BookDaoLocal implements BookDao{
 
+    async getBookById(id: string): Promise<Book> {
+        const file = await readFile('C:\\Users\\AdamRanieri\\Desktop\\pleasant-view-backend\\localbooks.json')
+        const text: string = await file.toString()
+        const books:Book[] = JSON.parse(text);
+        return books.find(book => book.id === id);
+    }
+
     async createBook(book: Book): Promise<Book> {
         const file = await readFile('C:\\Users\\AdamRanieri\\Desktop\\pleasant-view-backend\\localbooks.json')
         const text: string = await file.toString()

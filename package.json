@@ -5,7 +5,8 @@
   "main": "index.ts",
   "scripts": {
     "test": "jest",
-    "start": "ts-node index.ts"
+    "start": "ts-node index.ts",
+    "test-member": "jest ./specs/member-dao.spec.ts"
   },
   "repository": {
     "type": "git",

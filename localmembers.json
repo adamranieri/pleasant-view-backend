@@ -1,0 +1,16 @@
+[
+    {
+        "id":"101", 
+        "username":"gatorfan19",
+        "password":"theswamp",
+        "isEmployee": true,
+        "checkedOutBooks":[]
+    },
+    {
+        "id":"202", 
+        "username":"mountaineer99",
+        "password":"almostheaven",
+        "isEmployee": false,
+        "checkedOutBooks":[]
+    }
+]
