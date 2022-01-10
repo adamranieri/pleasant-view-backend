@@ -14,7 +14,7 @@ app.use(cors())
 
 const bookDao: BookDao = new BookDaoLocal();
 const memberDao: MemberDAO = new MemberDAOLocalImpl()
-const bookService: BookService = new BookServiceImpl(bookDao);// Dependency Injection
+const bookService: BookService = new BookServiceImpl(bookDao ,memberDao);// Dependency Injection
 const loginService: LoginService = new LoginServiceImpl(memberDao)
 
 app.post("/books", async (req,res)=>{
@@ -51,6 +51,14 @@ app.patch('/login', async (req,res)=>{
         res.send("Unable to login, check that your username password is correct")
     }
 
+})
+
+app.patch('/books/:id/checkout', async (req,res)=>{
+
+    const {id} = req.params
+    const body:{username:string} = req.body;
+    const book:Book  = await bookService.checkoutBook(id, body.username);
+    res.send(book)
 })
 
 app.listen(5000,()=>console.log("Application Started"));

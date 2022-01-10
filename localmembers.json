@@ -1,16 +1,1 @@
-[
-    {
-        "id":"101", 
-        "username":"gatorfan19",
-        "password":"theswamp",
-        "isEmployee": true,
-        "checkedOutBooks":[]
-    },
-    {
-        "id":"202", 
-        "username":"mountaineer99",
-        "password":"almostheaven",
-        "isEmployee": false,
-        "checkedOutBooks":[]
-    }
-]
+[{"id":"101","username":"gatorfan19","password":"theswamp","isEmployee":true,"checkedOutBooks":["101","202"]},{"id":"202","username":"mountaineer99","password":"almostheaven","isEmployee":false,"checkedOutBooks":["1de005fc-444d-4b38-93ce-5c48a893d9e9","c7a5c6f6-4234-4631-bc6c-c315169ea5e2","c276bd53-daf0-41a1-b9d1-e4d9e0902891"]}]

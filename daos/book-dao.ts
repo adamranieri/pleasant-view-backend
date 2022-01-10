@@ -7,5 +7,8 @@ export interface BookDao{
     getAllBooks(): Promise<Book[]>
 
     getBookById(id: string): Promise<Book>
+
+    updateBook(book: Book):Promise<Book>
+
     
 }
