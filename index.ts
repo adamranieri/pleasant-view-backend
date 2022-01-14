@@ -7,10 +7,14 @@ import { BookServiceImpl } from './services/book-service-impl';
 import cors from 'cors'
 import { LoginService, LoginServiceImpl } from './services/login-service';
 import { MemberDAO, MemberDAOLocalImpl } from './daos/member-dao';
+import logMiddleware from './middleware/logger-middleware';
+
+
 
 const app = express();
 app.use(express.json());
 app.use(cors())
+app.use(logMiddleware)
 
 const bookDao: BookDao = new BookDaoLocal();
 const memberDao: MemberDAO = new MemberDAOLocalImpl()
